@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { eventsPerSrcIp, eventsPerDestIp, alertsPerAction } from '../DUMMY_DATA'
 import { Bar } from 'react-chartjs-2';
 import DropdownBtn from './DropdownBtn';
@@ -39,7 +39,39 @@ function BarChart() {
   return (
     <div className='flex items-center justify-evenly w-screen'>
       <div style={{ width: "80vw", height: "90vh" }}>
-        <Bar data={barData} options={{ responsive: true, plugins: { legend: { position: 'top' } } }} />
+        <Bar data={barData} options={{
+          responsive: true, plugins: { legend: { position: 'top' } }, scales: {
+            x: {
+              title: {
+                display: true,
+                text: ' Source IP',
+                color: '#000000',
+                font: {
+
+                  size: 20,
+
+                  lineHeight: 1.2,
+                },
+                padding: { top: 20, left: 0, right: 0, bottom: 0 },
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Values',
+                color: '#000000',
+                font: {
+
+                  size: 20,
+
+                  lineHeight: 1.2,
+                },
+                padding: { top: 30, left: 0, right: 0, bottom: 0 },
+              },
+              beginAtZero: true,
+            },
+          },
+        }} />
       </div>
       {/* <div>
         <DropdownBtn param={param} setParam={setParam} />

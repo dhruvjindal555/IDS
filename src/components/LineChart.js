@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { eventsPerSrcIp, eventsPerDestIp, alertsPerAction } from '../DUMMY_DATA'
 import { Line } from 'react-chartjs-2';
 import {
@@ -39,7 +39,47 @@ function LineChart() {
   };
   return (
     <div className='w-screen   '>
-      <div className='m-10 flex justify-center items-center ' style={{ width: "85vw", height: "75vh" }}  > <Line data={lineData} options={{ responsive: true, plugins: { legend: { position: 'top' } } }} /></div>
+      <div className='m-10 flex justify-center items-center ' style={{ width: "85vw", height: "75vh" }}  >
+        <Line
+          data={lineData}
+          options={
+            {
+              responsive: true,
+              plugins: { legend: { position: 'top' } },
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: "Destination IP",
+                    color: '#000000',
+                    font: {
+                    
+                      size: 20,
+                    
+                      lineHeight: 1.2,
+                    },
+                    padding: { top: 20, left: 0, right: 0, bottom: 0 },
+                  },
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Values',
+                    color: '#000000',
+                    font: {
+                    
+                      size: 20,
+                      
+                      lineHeight: 1.2,
+                    },
+                    padding: { top: 30, left: 0, right: 0, bottom: 0 },
+                  },
+                  beginAtZero: true,
+                },
+              },
+            }
+          } />
+      </div>
       {/* <div>
         <DropdownBtn param={param} setParam={setParam}/>
       </div> */}
