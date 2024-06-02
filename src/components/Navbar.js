@@ -16,7 +16,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [navigation, setNavigation] = useState([
-        { name: 'Dashboard', href: 'dashboard', current: true },
+        { name: 'Dashboard', href: '', current: true },
         { name: 'BarChart', href: 'barChart', current: false },
         { name: 'LineChart', href: 'lineChart', current: false },
         { name: 'PieChart', href: 'pieChart', current: false },

@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="dashboard" element={<DashBoard />}/>
+          <Route path="/" element={<DashBoard />}/>
           <Route path="barChart" element={<BarChart />}/>
           <Route path="lineChart" element={<LineChart />}/>
           <Route path="pieChart" element={<PieChart />}/>
